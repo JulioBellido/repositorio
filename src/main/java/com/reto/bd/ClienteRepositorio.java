@@ -42,6 +42,26 @@ public class ClienteRepositorio {
     return clientes;
 }
     
+    public static String kpiclientes() throws SQLException {
+    String SQL_QUERY = "select round(avg(edad),2) promedio, round(stddev_pop(edad),2) desv_stand from  cliente";
+    String resultprom = null;
+    String resultdesv = null;
+    String resultado = null;
+    try (Connection con = Conexion.getConnection();
+        PreparedStatement pst = con.prepareStatement( SQL_QUERY );
+        ResultSet rs = pst.executeQuery();) {
+        
+        while ( rs.next() ) {
+          resultprom = rs.getString("promedio");
+          resultdesv = rs.getString("desv_stand");
+        }
+        
+        resultado = "Promedio: " + resultprom + "   Desviacion Estandar: " + resultdesv;
+
+    } 
+    return resultado;
+}
+
     public static String Grabar(Cliente cliente) throws SQLException {
     String SQL_QUERY = "insert into cliente (nombre,apellido,edad,fechanac)values(?,?,?,?)";
     Connection con = Conexion.getConnection();
@@ -52,8 +72,6 @@ public class ClienteRepositorio {
         pst.setDate(4,cliente.getFechaNacimiento());
 
         pst.executeUpdate();
-          
-          
     
    
     return "ok";

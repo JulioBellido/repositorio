@@ -22,9 +22,9 @@ public class Cliente {
 
     public Date getFechaNacimiento() {
 		return fechanacimiento;
-	}
+    }
 
-	public void setFechaNacimiento(Date fechanacimiento) {
+    public void setFechaNacimiento(Date fechanacimiento) {
 		this.fechanacimiento = fechanacimiento;
     }
 
@@ -32,7 +32,7 @@ public class Cliente {
 		return apellido;
 	}
 
-	public void setApellido(String apellido) {
+    public void setApellido(String apellido) {
 		this.apellido = apellido;
     }
 
@@ -41,7 +41,7 @@ public class Cliente {
 		return edad;
 	}
 
-	public void setEdad(String edad) {
+    public void setEdad(String edad) {
 		this.edad = edad;
     }
 

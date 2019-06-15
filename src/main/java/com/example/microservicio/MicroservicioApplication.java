@@ -29,18 +29,23 @@ public class MicroservicioApplication {
             return "Hola Mundo";
         }
         
-         @RequestMapping(value ="ListCliente", method = RequestMethod.GET)
+        @RequestMapping(value ="ListCliente", method = RequestMethod.GET)
         public List<Cliente>  listarclientes() throws SQLException{
             
             return ClienteRepositorio.listarclientes();
         }
+
+        @RequestMapping(value ="kpideclientes", method = RequestMethod.GET)
+        public String  kpiclientes() throws SQLException{
+            
+            return ClienteRepositorio.kpiclientes();
+        }        
         
         @RequestMapping(value = "/creacliente", method = RequestMethod.POST)
-        public String  listarclientes(@RequestBody Cliente cliente) throws SQLException{
+        public String  crearclientes(@RequestBody Cliente cliente) throws SQLException{
             ClienteRepositorio.Grabar(cliente);
             return "ok";
         }
-        
         
 
 }
