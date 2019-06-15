@@ -1,0 +1,13 @@
+CREATE TABLE `cliente` (
+  `clienteid` int(11) NOT NULL AUTO_INCREMENT,
+  
+                          `nombre` varchar(45) DEFAULT NULL,
+  
+                          `apellido` varchar(45) DEFAULT NULL,
+  
+                          `edad` int(3) DEFAULT NULL,
+  
+                          `fechanac` date DEFAULT NULL,
+  
+                           PRIMARY KEY (`clienteid`)
+) 
