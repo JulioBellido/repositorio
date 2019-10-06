@@ -1,0 +1,17 @@
+#HTTP Server
+server:
+  port: ${PORT:1111}
+
+#Discovery Server Access
+eureka:
+  client:
+    service-url:
+      default-zone: http://localhost:8761/eureka
+  instance:
+    status-page-url-path: /infoAula
+    health-check-url-path: /healthAula
+    metadata-map:
+       app-owner: jbg
+       description: test application for the expert course
+
+
